@@ -1,0 +1,619 @@
+sess: 
+<tensorflow.python.client.session.Session object at 0x112e60c88>
+level_managers: 
+0: <rl_coach.level_manager.LevelManager object at 0x111143438>
+
+top_level_manager: 
+<rl_coach.level_manager.LevelManager object at 0x111143438>
+environments: 
+0: <rl_coach.environments.gym_environment.GymEnvironment object at 0x110ea1d30>
+
+heatup_steps: 
+<rl_coach.core_types.EnvironmentSteps object at 0x110d43b38>
+evaluation_steps: 
+<rl_coach.core_types.EnvironmentEpisodes object at 0x110d43ef0>
+steps_between_evaluation_periods: 
+<rl_coach.core_types.EnvironmentEpisodes object at 0x110d43cc0>
+improve_steps: 
+<rl_coach.core_types.EnvironmentSteps object at 0x110d741d0>
+visualization_parameters: 
+"VisualizationParameters" {
+    "add_rendered_image_to_env_response": false,
+    "dump_csv": true,
+    "dump_gifs": false,
+    "dump_in_episode_signals": false,
+    "dump_mp4": false,
+    "dump_parameters_documentation": true,
+    "dump_signals_to_csv_every_x_episodes": 5,
+    "max_fps_for_human_control": 10,
+    "native_rendering": false,
+    "print_networks_summary": false,
+    "render": false,
+    "tensorboard": false,
+    "video_dump_methods": {}
+}
+
+name: 
+simple_rl_graph
+task_parameters: 
+"TaskParameters" {
+    "agent_type": null,
+    "checkpoint_restore_dir": null,
+    "custom_parameter": null,
+    "dump_gifs": false,
+    "dump_mp4": false,
+    "environment_type": null,
+    "evaluate": false,
+    "evaluate_only": false,
+    "evaluation_worker": false,
+    "experiment_name": "pong-rp",
+    "experiment_path": "./experiments/pong-rp/25_10_2018-18_19",
+    "exploration_policy_type": null,
+    "framework": {
+        "_value_": "TensorFlow",
+        "_name_": "tensorflow",
+        "__objclass__": "<enum 'Frameworks'>"
+    },
+    "framework_type": "tensorflow",
+    "level": "pong",
+    "list": false,
+    "no_summary": false,
+    "num_workers": 1,
+    "open_dashboard": false,
+    "play": false,
+    "preset": "/Users/dnishio/gits/coach/rl_coach/presets/Atari_NEC.py:graph_manager",
+    "print_networks_summary": false,
+    "render": false,
+    "save_checkpoint_dir": null,
+    "save_checkpoint_secs": null,
+    "seed": null,
+    "task_index": null,
+    "tensorboard": false,
+    "tf_verbosity": 3,
+    "use_cpu": false,
+    "verbosity": "low"
+}
+
+_phase: 
+RunPhase.UNDEFINED
+preset_validation_params: 
+"PresetValidationParameters" {
+    "max_episodes_to_achieve_reward": 1,
+    "min_reward_threshold": 0,
+    "num_workers": 1,
+    "reward_test_level": null,
+    "test": false,
+    "test_using_a_trace_test": false,
+    "trace_max_env_steps": 5000,
+    "trace_test_levels": null
+}
+
+reset_required: 
+False
+graph_initialization_time: 
+1540459198.6252108
+graph_creation_time: 
+1540459198.625909
+heatup_start_time: 
+None
+training_start_time: 
+None
+last_evaluation_start_time: 
+None
+last_checkpoint_saving_time: 
+1540459198.625212
+total_steps_counters: 
+RunPhase.HEATUP: <rl_coach.core_types.TotalStepsCounter object at 0x110ea1b70>
+RunPhase.TRAIN: <rl_coach.core_types.TotalStepsCounter object at 0x110ea1ba8>
+RunPhase.TEST: <rl_coach.core_types.TotalStepsCounter object at 0x110ea1be0>
+
+checkpoint_id: 
+0
+checkpoint_saver: 
+<tensorflow.python.training.saver.Saver object at 0x1111437f0>
+graph_logger: 
+<rl_coach.logger.Logger object at 0x110ea1c18>
+agent_params: 
+"NECAgentParameters" {
+    "algorithm": {
+        "DND_key_error_threshold": 0,
+        "apply_gradients_every_x_episodes": 5,
+        "bootstrap_total_return_from_old_policy": true,
+        "collect_new_data": true,
+        "discount": 0.99,
+        "dnd_size": 500000,
+        "heatup_using_network_decisions": false,
+        "in_action_space": null,
+        "l2_norm_added_delta": 0.001,
+        "load_memory_from_file_path": null,
+        "n_step": 100,
+        "new_value_shift_coefficient": 0.1,
+        "num_consecutive_playing_steps": {
+            "_num_steps": 4,
+            "__class__": "EnvironmentSteps"
+        },
+        "num_consecutive_training_steps": 1,
+        "num_steps_between_copying_online_weights_to_target": {
+            "_num_steps": 0,
+            "__class__": "TrainingSteps"
+        },
+        "number_of_knn": 50,
+        "propagate_updates_to_DND": false,
+        "rate_for_copying_weights_to_target": 1.0,
+        "scale_external_reward_by_intrinsic_reward_value": false,
+        "share_statistics_between_workers": true,
+        "store_transitions_only_when_episodes_are_terminated": false,
+        "use_accumulated_reward_as_measurement": false,
+        "__class__": "NECAlgorithmParameters"
+    },
+    "current_episode": 0,
+    "exploration": {
+        "action_space": {
+            "_high": "array([5.])",
+            "_low": "array([0.])",
+            "_shape": "array([1])",
+            "default_action": 0,
+            "descriptions": {
+                "0": "NOOP",
+                "1": "FIRE",
+                "2": "RIGHT",
+                "3": "LEFT",
+                "4": "RIGHTFIRE",
+                "5": "LEFTFIRE"
+            },
+            "num_dimensions": 1,
+            "num_elements": 1,
+            "__class__": "DiscreteActionSpace"
+        },
+        "continuous_exploration_policy_parameters": {
+            "action_space": null,
+            "evaluation_noise_percentage": 0.05,
+            "noise_percentage_schedule": {
+                "current_value": 0.1,
+                "decay_delta": 0.0,
+                "decay_steps": 50000,
+                "final_value": 0.1,
+                "initial_value": 0.1,
+                "__class__": "LinearSchedule"
+            },
+            "__class__": "AdditiveNoiseParameters"
+        },
+        "epsilon_schedule": {
+            "current_value": 0.5,
+            "decay_delta": 9.8e-06,
+            "decay_steps": 50000,
+            "final_value": 0.01,
+            "initial_value": 0.5,
+            "__class__": "LinearSchedule"
+        },
+        "evaluation_epsilon": 0.01,
+        "__class__": "EGreedyParameters"
+    },
+    "full_name_id": "main_level/agent",
+    "input_filter": {
+        "_observation_filters": {
+            "observation": {
+                "rescaling": {
+                    "output_observation_space": {
+                        "_high": "array([[[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]],\n\n       [[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]],\n\n       [[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]],\n\n       ...,\n\n       [[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]],\n\n       [[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]],\n\n       [[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]]])",
+                        "_low": "array([[[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]],\n\n       [[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]],\n\n       [[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]],\n\n       ...,\n\n       [[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]],\n\n       [[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]],\n\n       [[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]]])",
+                        "_shape": "array([84, 84,  3])",
+                        "channels": "3",
+                        "channels_axis": -1,
+                        "has_colors": "True",
+                        "num_dimensions": 3,
+                        "num_elements": 21168,
+                        "__class__": "ImageObservationSpace"
+                    },
+                    "planar_map_output_shape": "array([84, 84])",
+                    "rescaling_interpolation_type": {
+                        "_value_": "bilinear",
+                        "_name_": "BILINEAR",
+                        "__objclass__": "<enum 'RescaleInterpolationType'>"
+                    },
+                    "supports_batching": false,
+                    "__class__": "ObservationRescaleToSizeFilter"
+                },
+                "to_grayscale": {
+                    "supports_batching": false,
+                    "__class__": "ObservationRGBToYFilter"
+                },
+                "to_uint8": {
+                    "input_high": 255,
+                    "input_low": 0,
+                    "supports_batching": false,
+                    "__class__": "ObservationToUInt8Filter"
+                },
+                "stacking": {
+                    "stack": {},
+                    "stack_size": 4,
+                    "stacking_axis": -1,
+                    "supports_batching": false,
+                    "__class__": "ObservationStackingFilter"
+                }
+            }
+        },
+        "_reward_filters": {},
+        "i_am_a_reference_filter": false,
+        "__class__": "InputFilter"
+    },
+    "is_a_highest_level_agent": true,
+    "is_a_lowest_level_agent": true,
+    "memory": {
+        "load_memory_from_file_path": null,
+        "max_size": [
+            "<MemoryGranularity.Transitions: 0>",
+            100000
+        ],
+        "shared_memory": false,
+        "__class__": "NECMemoryParameters"
+    },
+    "name": "agent",
+    "network_wrappers": {
+        "main": {
+            "adam_optimizer_beta1": 0.9,
+            "adam_optimizer_beta2": 0.99,
+            "async_training": false,
+            "batch_size": 32,
+            "clip_gradients": null,
+            "create_target_network": false,
+            "embedding_merger_type": {
+                "_value_": 0,
+                "_name_": "Concat",
+                "__objclass__": "<enum 'EmbeddingMergerType'>"
+            },
+            "force_cpu": false,
+            "framework": {
+                "_value_": "TensorFlow",
+                "_name_": "tensorflow",
+                "__objclass__": "<enum 'Frameworks'>"
+            },
+            "gradients_clipping_method": {
+                "_value_": 0,
+                "_name_": "ClipByGlobalNorm",
+                "__objclass__": "<enum 'GradientClippingMethod'>"
+            },
+            "heads_parameters": {
+                "0": {
+                    "activation_function": "relu",
+                    "dense_layer": {
+                        "__call__": {
+                            "__class__": "function"
+                        },
+                        "__dict__": "<attribute '__dict__' of 'Dense' objects>",
+                        "__doc__": null,
+                        "__init__": {
+                            "__class__": "function"
+                        },
+                        "__module__": "rl_coach.architectures.tensorflow_components.layers",
+                        "__str__": {
+                            "__class__": "function"
+                        },
+                        "__weakref__": "<attribute '__weakref__' of 'Dense' objects>",
+                        "__class__": "type"
+                    },
+                    "loss_weight": 1.0,
+                    "name": "dnd_q_head_params",
+                    "num_output_head_copies": 1,
+                    "parameterized_class_name": "DNDQHead",
+                    "rescale_gradient_from_head_by_factor": 1.0,
+                    "__class__": "DNDQHeadParameters"
+                }
+            },
+            "input_embedders_parameters": {
+                "observation": {
+                    "activation_function": "relu",
+                    "batchnorm": false,
+                    "dense_layer": {
+                        "__call__": {
+                            "__class__": "function"
+                        },
+                        "__dict__": "<attribute '__dict__' of 'Dense' objects>",
+                        "__doc__": null,
+                        "__init__": {
+                            "__class__": "function"
+                        },
+                        "__module__": "rl_coach.architectures.tensorflow_components.layers",
+                        "__str__": {
+                            "__class__": "function"
+                        },
+                        "__weakref__": "<attribute '__weakref__' of 'Dense' objects>",
+                        "__class__": "type"
+                    },
+                    "dropout": false,
+                    "input_clipping": null,
+                    "input_offset": {
+                        "image": 0.0,
+                        "vector": 0.0
+                    },
+                    "input_rescaling": {
+                        "image": 255.0,
+                        "vector": 1.0
+                    },
+                    "is_training": false,
+                    "name": "embedder",
+                    "scheme": {
+                        "_value_": "Medium",
+                        "_name_": "Medium",
+                        "__objclass__": "<enum 'EmbedderScheme'>"
+                    },
+                    "__class__": "InputEmbedderParameters"
+                }
+            },
+            "l2_regularization": 0,
+            "learning_rate": 1e-05,
+            "learning_rate_decay_rate": 0,
+            "learning_rate_decay_steps": 0,
+            "middleware_parameters": {
+                "activation_function": "relu",
+                "batchnorm": false,
+                "dense_layer": {
+                    "__call__": {
+                        "__class__": "function"
+                    },
+                    "__dict__": "<attribute '__dict__' of 'RPDense' objects>",
+                    "__doc__": "RandomProjectionLayer",
+                    "__init__": {
+                        "__class__": "function"
+                    },
+                    "__module__": "rl_coach.architectures.tensorflow_components.layers",
+                    "__str__": {
+                        "__class__": "function"
+                    },
+                    "__weakref__": "<attribute '__weakref__' of 'RPDense' objects>",
+                    "__class__": "type"
+                },
+                "dropout": false,
+                "is_training": false,
+                "name": "middleware_fc_embedder",
+                "parameterized_class_name": "FCMiddleware",
+                "scheme": {
+                    "_value_": "RP",
+                    "_name_": "RP",
+                    "__objclass__": "<enum 'MiddlewareScheme'>"
+                },
+                "__class__": "FCMiddlewareParameters"
+            },
+            "optimizer_epsilon": 0.0001,
+            "optimizer_type": "Adam",
+            "replace_mse_with_huber_loss": false,
+            "rms_prop_optimizer_decay": 0.9,
+            "scale_down_gradients_by_number_of_workers_for_sync_training": true,
+            "sess": null,
+            "shared_optimizer": true,
+            "tensorflow_support": true,
+            "use_separate_networks_per_head": false,
+            "__class__": "NECNetworkParameters"
+        }
+    },
+    "output_filter": {
+        "_action_filters": {},
+        "i_am_a_reference_filter": false,
+        "__class__": "NoOutputFilter"
+    },
+    "pre_network_filter": {
+        "_observation_filters": {},
+        "_reward_filters": {},
+        "i_am_a_reference_filter": false,
+        "__class__": "NoInputFilter"
+    },
+    "task_parameters": {
+        "agent_type": null,
+        "checkpoint_restore_dir": null,
+        "custom_parameter": null,
+        "dump_gifs": false,
+        "dump_mp4": false,
+        "environment_type": null,
+        "evaluate": false,
+        "evaluate_only": false,
+        "evaluation_worker": false,
+        "experiment_name": "pong-rp",
+        "experiment_path": "./experiments/pong-rp/25_10_2018-18_19",
+        "exploration_policy_type": null,
+        "framework": {
+            "_value_": "TensorFlow",
+            "_name_": "tensorflow",
+            "__objclass__": "<enum 'Frameworks'>"
+        },
+        "framework_type": "tensorflow",
+        "level": "pong",
+        "list": false,
+        "no_summary": false,
+        "num_workers": 1,
+        "open_dashboard": false,
+        "play": false,
+        "preset": "/Users/dnishio/gits/coach/rl_coach/presets/Atari_NEC.py:graph_manager",
+        "print_networks_summary": false,
+        "render": false,
+        "save_checkpoint_dir": null,
+        "save_checkpoint_secs": null,
+        "seed": null,
+        "task_index": null,
+        "tensorboard": false,
+        "tf_verbosity": 3,
+        "use_cpu": false,
+        "verbosity": "low",
+        "__class__": "TaskParameters"
+    },
+    "visualization": {
+        "add_rendered_image_to_env_response": false,
+        "dump_csv": true,
+        "dump_gifs": false,
+        "dump_in_episode_signals": false,
+        "dump_mp4": false,
+        "dump_parameters_documentation": true,
+        "dump_signals_to_csv_every_x_episodes": 5,
+        "max_fps_for_human_control": 10,
+        "native_rendering": false,
+        "print_networks_summary": false,
+        "render": false,
+        "tensorboard": false,
+        "video_dump_methods": {},
+        "__class__": "VisualizationParameters"
+    }
+}
+
+env_params: 
+"Atari" {
+    "additional_simulator_parameters": null,
+    "custom_reward_threshold": null,
+    "default_input_filter": {
+        "_observation_filters": {
+            "observation": {
+                "rescaling": {
+                    "output_observation_space": {
+                        "_high": "array([[[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]],\n\n       [[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]],\n\n       [[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]],\n\n       ...,\n\n       [[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]],\n\n       [[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]],\n\n       [[255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.],\n        ...,\n        [255., 255., 255.],\n        [255., 255., 255.],\n        [255., 255., 255.]]])",
+                        "_low": "array([[[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]],\n\n       [[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]],\n\n       [[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]],\n\n       ...,\n\n       [[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]],\n\n       [[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]],\n\n       [[0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.],\n        ...,\n        [0., 0., 0.],\n        [0., 0., 0.],\n        [0., 0., 0.]]])",
+                        "_shape": "array([84, 84,  3])",
+                        "channels": "3",
+                        "channels_axis": -1,
+                        "has_colors": "True",
+                        "num_dimensions": 3,
+                        "num_elements": 21168,
+                        "__class__": "ImageObservationSpace"
+                    },
+                    "planar_map_output_shape": "array([84, 84])",
+                    "rescaling_interpolation_type": {
+                        "_value_": "bilinear",
+                        "_name_": "BILINEAR",
+                        "__objclass__": "<enum 'RescaleInterpolationType'>"
+                    },
+                    "supports_batching": false,
+                    "__class__": "ObservationRescaleToSizeFilter"
+                },
+                "to_grayscale": {
+                    "supports_batching": false,
+                    "__class__": "ObservationRGBToYFilter"
+                },
+                "to_uint8": {
+                    "input_high": 255,
+                    "input_low": 0,
+                    "supports_batching": false,
+                    "__class__": "ObservationToUInt8Filter"
+                },
+                "stacking": {
+                    "stack": {},
+                    "stack_size": 4,
+                    "stacking_axis": -1,
+                    "supports_batching": false,
+                    "__class__": "ObservationStackingFilter"
+                }
+            }
+        },
+        "_reward_filters": {
+            "clipping": {
+                "clipping_high": 1.0,
+                "clipping_low": -1.0,
+                "__class__": "RewardClippingFilter"
+            }
+        },
+        "i_am_a_reference_filter": true,
+        "__class__": "InputFilter"
+    },
+    "default_output_filter": {
+        "_action_filters": {},
+        "i_am_a_reference_filter": false,
+        "__class__": "NoOutputFilter"
+    },
+    "experiment_path": "./experiments/pong-rp/25_10_2018-18_19",
+    "frame_skip": 4,
+    "human_control": false,
+    "level": {
+        "levels": {
+            "air_raid": "AirRaidDeterministic-v4",
+            "alien": "AlienDeterministic-v4",
+            "amidar": "AmidarDeterministic-v4",
+            "assault": "AssaultDeterministic-v4",
+            "asterix": "AsterixDeterministic-v4",
+            "asteroids": "AsteroidsDeterministic-v4",
+            "atlantis": "AtlantisDeterministic-v4",
+            "bank_heist": "BankHeistDeterministic-v4",
+            "battle_zone": "BattleZoneDeterministic-v4",
+            "beam_rider": "BeamRiderDeterministic-v4",
+            "berzerk": "BerzerkDeterministic-v4",
+            "bowling": "BowlingDeterministic-v4",
+            "boxing": "BoxingDeterministic-v4",
+            "breakout": "BreakoutDeterministic-v4",
+            "carnival": "CarnivalDeterministic-v4",
+            "centipede": "CentipedeDeterministic-v4",
+            "chopper_command": "ChopperCommandDeterministic-v4",
+            "crazy_climber": "CrazyClimberDeterministic-v4",
+            "demon_attack": "DemonAttackDeterministic-v4",
+            "double_dunk": "DoubleDunkDeterministic-v4",
+            "elevator_action": "ElevatorActionDeterministic-v4",
+            "enduro": "EnduroDeterministic-v4",
+            "fishing_derby": "FishingDerbyDeterministic-v4",
+            "freeway": "FreewayDeterministic-v4",
+            "frostbite": "FrostbiteDeterministic-v4",
+            "gopher": "GopherDeterministic-v4",
+            "gravitar": "GravitarDeterministic-v4",
+            "hero": "HeroDeterministic-v4",
+            "ice_hockey": "IceHockeyDeterministic-v4",
+            "jamesbond": "JamesbondDeterministic-v4",
+            "journey_escape": "JourneyEscapeDeterministic-v4",
+            "kangaroo": "KangarooDeterministic-v4",
+            "krull": "KrullDeterministic-v4",
+            "kung_fu_master": "KungFuMasterDeterministic-v4",
+            "montezuma_revenge": "MontezumaRevengeDeterministic-v4",
+            "ms_pacman": "MsPacmanDeterministic-v4",
+            "name_this_game": "NameThisGameDeterministic-v4",
+            "phoenix": "PhoenixDeterministic-v4",
+            "pitfall": "PitfallDeterministic-v4",
+            "pong": "PongDeterministic-v4",
+            "pooyan": "PooyanDeterministic-v4",
+            "private_eye": "PrivateEyeDeterministic-v4",
+            "qbert": "QbertDeterministic-v4",
+            "riverraid": "RiverraidDeterministic-v4",
+            "road_runner": "RoadRunnerDeterministic-v4",
+            "robotank": "RobotankDeterministic-v4",
+            "seaquest": "SeaquestDeterministic-v4",
+            "skiing": "SkiingDeterministic-v4",
+            "solaris": "SolarisDeterministic-v4",
+            "space_invaders": "SpaceInvadersDeterministic-v4",
+            "star_gunner": "StarGunnerDeterministic-v4",
+            "tennis": "TennisDeterministic-v4",
+            "time_pilot": "TimePilotDeterministic-v4",
+            "tutankham": "TutankhamDeterministic-v4",
+            "up_n_down": "UpNDownDeterministic-v4",
+            "venture": "VentureDeterministic-v4",
+            "video_pinball": "VideoPinballDeterministic-v4",
+            "wizard_of_wor": "WizardOfWorDeterministic-v4",
+            "yars_revenge": "YarsRevengeDeterministic-v4",
+            "zaxxon": "ZaxxonDeterministic-v4"
+        },
+        "selected_level": "pong",
+        "__class__": "SingleLevelSelection"
+    },
+    "max_over_num_frames": 2,
+    "random_initialization_steps": 1,
+    "seed": null
+}
+
+variables_to_restore: 
+0: <tf.Variable 'main_level/agent/main/online/global_step:0' shape=() dtype=int64_ref>
+1: <tf.Variable 'main_level/agent/main/online/network_0/observation/Conv2d_0/kernel:0' shape=(8, 8, 4, 32) dtype=float32_ref>
+2: <tf.Variable 'main_level/agent/main/online/network_0/observation/Conv2d_0/bias:0' shape=(32,) dtype=float32_ref>
+3: <tf.Variable 'main_level/agent/main/online/network_0/observation/Conv2d_2/kernel:0' shape=(4, 4, 32, 64) dtype=float32_ref>
+4: <tf.Variable 'main_level/agent/main/online/network_0/observation/Conv2d_2/bias:0' shape=(64,) dtype=float32_ref>
+5: <tf.Variable 'main_level/agent/main/online/network_0/observation/Conv2d_4/kernel:0' shape=(3, 3, 64, 64) dtype=float32_ref>
+6: <tf.Variable 'main_level/agent/main/online/network_0/observation/Conv2d_4/bias:0' shape=(64,) dtype=float32_ref>
+7: <tf.Variable 'main_level/agent/main/online/network_0/middleware_fc_embedder/RPDense_0/kernel:0' shape=(3136, 64) dtype=float32_ref>
+8: <tf.Variable 'main_level/agent/main/online/network_0/middleware_fc_embedder/RPDense_0/bias:0' shape=(64,) dtype=float32_ref>
+9: <tf.Variable 'main_level/agent/main/online/network_0/gradients_from_head_0-0_rescalers:0' shape=() dtype=float32_ref>
+10: <tf.Variable 'main_level/agent/main/online/beta1_power:0' shape=() dtype=float32_ref>
+11: <tf.Variable 'main_level/agent/main/online/beta2_power:0' shape=() dtype=float32_ref>
+12: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_0/kernel/Adam:0' shape=(8, 8, 4, 32) dtype=float32_ref>
+13: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_0/kernel/Adam_1:0' shape=(8, 8, 4, 32) dtype=float32_ref>
+14: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_0/bias/Adam:0' shape=(32,) dtype=float32_ref>
+15: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_0/bias/Adam_1:0' shape=(32,) dtype=float32_ref>
+16: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_2/kernel/Adam:0' shape=(4, 4, 32, 64) dtype=float32_ref>
+17: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_2/kernel/Adam_1:0' shape=(4, 4, 32, 64) dtype=float32_ref>
+18: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_2/bias/Adam:0' shape=(64,) dtype=float32_ref>
+19: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_2/bias/Adam_1:0' shape=(64,) dtype=float32_ref>
+20: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_4/kernel/Adam:0' shape=(3, 3, 64, 64) dtype=float32_ref>
+21: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_4/kernel/Adam_1:0' shape=(3, 3, 64, 64) dtype=float32_ref>
+22: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_4/bias/Adam:0' shape=(64,) dtype=float32_ref>
+23: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/observation/Conv2d_4/bias/Adam_1:0' shape=(64,) dtype=float32_ref>
+24: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/gradients_from_head_0-0_rescalers/Adam:0' shape=() dtype=float32_ref>
+25: <tf.Variable 'main_level/agent/main/online/main_level/agent/main/online/network_0/gradients_from_head_0-0_rescalers/Adam_1:0' shape=() dtype=float32_ref>
+
