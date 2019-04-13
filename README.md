@@ -2,7 +2,7 @@
 
 An implementation of **Random Projection in Neural Episodic Control** (NEC-RP) based on [*Coach*](https://github.com/NervanaSystems/coach).
 
-[https://arxiv.org/abs/1801.01968](https://arxiv.org/abs/1801.01968)
+[https://arxiv.org/abs/1904.01790](https://arxiv.org/abs/1904.01790)
 
 
 
